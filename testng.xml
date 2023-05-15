@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ContactUS Career CaseStudies HireDedicatedDev DedicatedSoftwareTeams">
+    <test name="ContactUS Career CaseStudies HireDedicatedDev DedicatedSoftwareTeams">
+        <classes>
+            <class name="TestCases.All_TestCases_With_ExtentReport"></class>
+        </classes>
+    </test>
+</suite>
