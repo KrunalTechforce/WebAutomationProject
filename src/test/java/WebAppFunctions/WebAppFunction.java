@@ -62,7 +62,7 @@ public class WebAppFunction{
         option.selectByVisibleText("Website Development");
 
         contactUsPo.Description.sendKeys("This is only for testing");
-//        contactUsPo.SubmitButton.click();
+        contactUsPo.SubmitButton.click();
         wait.until(ExpectedConditions.visibilityOf(contactUsPo.SuccessThankYou));
         Assert.assertEquals(contactUsPo.ReceivedInquiryMSG.getText(),"We have received your inquiry.");
     }
