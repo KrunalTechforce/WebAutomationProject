@@ -1,7 +1,6 @@
 package TestCases;
 
 
-import Utilities.BaseClass;
 import WebAppFunctions.WebAppFunction;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -20,6 +19,9 @@ import org.codehaus.plexus.util.IOUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -31,12 +33,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
-public class All_TestCases_With_ExtentReport extends BaseClass {
+public class All_TestCases_With_ExtentReport{
 
     ExtentSparkReporter htmlReporter;
     ExtentReports reports;
     ExtentTest test;
+
+    public static WebDriver webDriver;
 
     @BeforeTest
     public void abc (){
@@ -53,6 +59,33 @@ public class All_TestCases_With_ExtentReport extends BaseClass {
         htmlReporter.config().setReportName("Test Report");
         htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setTimeStampFormat("EEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
+    }
+
+    @BeforeMethod
+    public void setUp() throws IOException{
+        FileInputStream fileInputStream = new FileInputStream("./config.properties");
+        Properties properties = new Properties();
+        properties.load(fileInputStream);
+        String browser = properties.getProperty("browser");
+
+        if (browser.equals("chrome"))
+        {
+//            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "./Drivers/chromedriver.exe");
+            ChromeOptions opt = new ChromeOptions();
+            opt.addExtensions(new File("6.4_0.crx"));
+            webDriver = new ChromeDriver(opt);
+            webDriver.navigate().to("https://techforceglobal.com/");
+            webDriver.manage().window().maximize();
+            webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
+        else if (browser.equals("firefox"))
+        {
+//            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "./Drivers/geckodriver.exe");
+            webDriver = new FirefoxDriver();
+            webDriver.navigate().to("https://techforceglobal.com/");
+            webDriver.manage().window().maximize();
+            webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
     }
 
     @Test(priority = 1)
