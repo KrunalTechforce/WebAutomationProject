@@ -138,35 +138,35 @@ public class All_TestCases_With_ExtentReport extends BaseClass {
     @AfterTest
     public void Teardown() throws EmailException, InterruptedException {
         reports.flush();
-        Thread.sleep(10000);
-
-        //Create the attachment
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        String date1= dateFormat.format(date);
-        EmailAttachment attachment = new EmailAttachment();
-        attachment.setPath("ExtentReport.html");
-        attachment.setDisposition(EmailAttachment.ATTACHMENT);
-        attachment.setDescription(date1 + " Test Report");
-        attachment.setName(date1 + " Test Report");
-
-        //Create the email message
-        System.out.println("====================Start Sending====================");
-        MultiPartEmail email = new MultiPartEmail();
-        email.setHostName("smtp.gmail.com");
-        email.setSmtpPort(465);
-        email.setAuthenticator(new DefaultAuthenticator("krunaltechforce@gmail.com", "nawkikeptovheqxb"));
-        email.setSSLOnConnect(true);
-        email.addTo("parekhkrunal1997@gmail.com", "Krunal Parekh");
-        email.setFrom("krunaltechforce@gmail.com", "Techforce");
-        email.setSubject(date1 + " Extent Test Report");
-        email.setMsg(date1 + " Extent Test Report");
-
-        //add the attachment
-        email.attach(attachment);
-
-        //send the email
-        email.send();
-        System.out.println("===================Mail Sent Successfully=========================");
+//        Thread.sleep(10000);
+//
+//        //Create the attachment
+//        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+//        Date date = new Date();
+//        String date1= dateFormat.format(date);
+//        EmailAttachment attachment = new EmailAttachment();
+//        attachment.setPath("ExtentReport.html");
+//        attachment.setDisposition(EmailAttachment.ATTACHMENT);
+//        attachment.setDescription(date1 + " Test Report");
+//        attachment.setName(date1 + " Test Report");
+//
+//        //Create the email message
+//        System.out.println("====================Start Sending====================");
+//        MultiPartEmail email = new MultiPartEmail();
+//        email.setHostName("smtp.gmail.com");
+//        email.setSmtpPort(465);
+//        email.setAuthenticator(new DefaultAuthenticator("krunaltechforce@gmail.com", "nawkikeptovheqxb"));
+//        email.setSSLOnConnect(true);
+//        email.addTo("parekhkrunal1997@gmail.com", "Krunal Parekh");
+//        email.setFrom("krunaltechforce@gmail.com", "Techforce");
+//        email.setSubject(date1 + " Extent Test Report");
+//        email.setMsg(date1 + " Extent Test Report");
+//
+//        //add the attachment
+//        email.attach(attachment);
+//
+//        //send the email
+//        email.send();
+//        System.out.println("===================Mail Sent Successfully=========================");
     }
 }
