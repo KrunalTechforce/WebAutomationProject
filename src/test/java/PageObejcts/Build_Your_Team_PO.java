@@ -18,7 +18,7 @@ public class Build_Your_Team_PO {
     @FindBy(xpath = "//h1[contains(text(),'Custom Software Development Solutions')]")
     public WebElement VerifyHomePage;
 
-    @FindBy(xpath = "//a[contains(text(),'×')]")
+    @FindBy(xpath = "//div[@id='hs-eu-cookie-confirmation-button-group']")
     public WebElement HandleCookiesPopup;
 
     /////////////////////////////////Hire Dedicated Developers/////////////////////////////////

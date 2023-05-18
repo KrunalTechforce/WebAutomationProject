@@ -18,7 +18,7 @@ public class CaseStudies_PO {
     @FindBy(xpath = "//h1[contains(text(),'Custom Software Development Solutions')]")
     public WebElement VerifyHomePage;
 
-    @FindBy(xpath = "//a[contains(text(),'×')]")
+    @FindBy(xpath = "//div[@id='hs-eu-cookie-confirmation-button-group']")
     public WebElement HandleCookiesPopup;
 
     @FindBy(xpath = "//a[contains(text(),'Our Work')]")
@@ -63,7 +63,7 @@ public class CaseStudies_PO {
     @FindBy(xpath = "//p[contains(text(),'Downloaded file successfully')]")
     public WebElement PDFDownloadSuccessfully;
 
-    @FindBy(xpath = "//button[contains(text(),'×')]")
+    @FindBy(xpath = "//button[@class='close']")
     public WebElement CaseStudyClosePopup;
 
 }
