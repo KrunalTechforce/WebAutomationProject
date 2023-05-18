@@ -70,7 +70,7 @@ public class All_TestCases_With_ExtentReport{
 
         if (browser.equals("chrome"))
         {
-//            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "./Drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","/home/techforce/Downloads/chromedriver");
             ChromeOptions opt = new ChromeOptions();
             opt.addExtensions(new File("6.4_0.crx"));
             webDriver = new ChromeDriver(opt);
