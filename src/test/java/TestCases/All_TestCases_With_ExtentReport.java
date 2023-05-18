@@ -10,6 +10,8 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.api.client.util.IOUtils;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.OperatingSystem;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
@@ -70,9 +72,11 @@ public class All_TestCases_With_ExtentReport{
 
         if (browser.equals("chrome"))
         {
-            System.setProperty("webdriver.chrome.driver","/home/techforce/Downloads/chromedriver");
+            WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX);
+//            System.setProperty("webdriver.chrome.driver","/home/techforce/Downloads/chromedriver");
             ChromeOptions opt = new ChromeOptions();
             opt.addExtensions(new File("6.4_0.crx"));
+
             webDriver = new ChromeDriver(opt);
             webDriver.navigate().to("https://techforceglobal.com/");
             webDriver.manage().window().maximize();
