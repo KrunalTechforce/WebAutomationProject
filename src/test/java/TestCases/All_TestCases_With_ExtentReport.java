@@ -72,7 +72,7 @@ public class All_TestCases_With_ExtentReport{
 
         if (browser.equals("chrome"))
         {
-//            WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX);
+            WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX);
 
 //            System.setProperty("webdriver.chrome.driver","/home/techforce/Downloads/chromedriver");
             ChromeOptions opt = new ChromeOptions();
