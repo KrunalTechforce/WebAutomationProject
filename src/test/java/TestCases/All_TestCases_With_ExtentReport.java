@@ -74,12 +74,12 @@ public class All_TestCases_With_ExtentReport{
         {
 //            WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX);
 
-//            System.setProperty("webdriver.chrome.driver","/home/techforce/Downloads/chromedriver");
+            System.setProperty("webdriver.chrome.driver","/home/techforce/Downloads/chromedriver");
             ChromeOptions opt = new ChromeOptions();
-            opt.addExtensions(new File("6.4_0.crx"));
-//            opt.addArguments("--headless");
-//            opt.addArguments("--no-sandbox");
-//            opt.addArguments("--disable-dev-shm-usage");
+//            opt.addExtensions(new File("6.4_0.crx"));
+            opt.addArguments("--headless");
+            opt.addArguments("--no-sandbox");
+            opt.addArguments("--disable-dev-shm-usage");
             webDriver = new ChromeDriver(opt);
             webDriver.navigate().to("https://techforceglobal.com/");
             webDriver.manage().window().maximize();

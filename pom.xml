@@ -115,5 +115,13 @@
             <version>5.3.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v113 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v113</artifactId>
+            <version>4.9.1</version>
+        </dependency>
+
+
     </dependencies>
 </project>

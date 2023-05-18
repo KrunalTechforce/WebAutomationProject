@@ -44,3 +44,36 @@ Go to the Build Steps Section and From dropdown select "Execute Windows batch co
 Enter list of command for execution of maven
 COMMAND : mvn clean test
 Click on Apply and Save
+
+
+*************Using Pipeline Configuration**************
+Write below script in pipeline script section in configuration
+Click on New item
+Enter project name
+Select Pipeline Project
+Click Ok button
+Redirect on configure page
+Go to Pipeline section and select right side dropdown and select Hello world then add below script
+And If make new script click on pipeline script
+Click on Apply and Save
+-----------------------------------------------------
+pipeline {
+    agent any
+
+    stages {
+        stage('Get Code') {
+            steps {
+                git credentialsId: '0086fb22-6d3c-464c-8e58-3d6012e0c4f9', url: 'https://github.com/KrunalTechforce/WebAutomationProject.git'
+                echo '!!!!!!!!!!!!!!!!!!!Get Code!!!!!!!!!!!!!!!!!!!!!'
+            }
+        }
+        stage('Execute Code')
+        {
+            steps{
+            bat 'mvn clean test'
+            echo '!!!!!!!!!!!!!!TestCases Execute!!!!!!!!!!!!!!!'
+            }
+        }
+    }
+}
+-------------------------------------------------------
