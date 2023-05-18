@@ -165,7 +165,7 @@ public class All_TestCases_With_ExtentReport{
         {
             test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + "SKIP", ExtentColor.YELLOW));
         }
-//        webDriver.close();
+        webDriver.close();
     }
 
     @AfterTest
