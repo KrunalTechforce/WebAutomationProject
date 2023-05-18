@@ -1,0 +1,46 @@
+Add Code into pom.xml file
+*********************************************
+<!-- Configure maven surefire plugin for qtest testng-plugin-log-collector to listen the tests-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>iso-8859-1</encoding>
+                    <source>11</source>  <!-- Select Java Target Version-->
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- End configuration -->
+*********************************************
+How to upload maven project on jenkins
+*********************************************
+Download Jenkins.war file LTS version
+Open CMD and write java -jar <download folder path OR jenkins.war file path> /jenkins.war and Hit Enter
+Copy 16 digit administration code from CMD 
+Go to chrome browser and enter localhost:/8080
+Enter 16 digit code and press continue and select install suggested plugins wait untill complete
+Create login credentials and login into jenkins
+Click on New item
+Enter project name
+Select Free style Project
+Click Ok button
+Redirect on configure page
+In Source Code Management section Select Git radiobutton and enter Git URL there and click on add button and add git credentials there and select from dropdown
+Go to the Build Steps Section and From dropdown select "Execute Windows batch command"
+Enter list of command for execution of maven
+COMMAND : mvn clean test
+Click on Apply and Save
