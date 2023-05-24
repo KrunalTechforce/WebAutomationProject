@@ -197,8 +197,9 @@ public class All_TestCases_With_ExtentReport{
         email.setSmtpPort(465);
         email.setAuthenticator(new DefaultAuthenticator("krunaltechforce@gmail.com", "nawkikeptovheqxb"));
         email.setSSLOnConnect(true);
-        email.addTo("krunal.parekh@techforceglobal.com", "Krunal Techforce");
-        email.addCc("abhilash.kabira@techforceglobal.com", "Abhilash Kabira");
+        email.addTo("krunal.parekh@techforceglobal.com", "Krunal Parekh");
+        email.addTo("himanshu.tatariya@techforceglobal.com","Himanshu Tatariya");
+        email.addCc("bhavin.shah@techforceglobal.com", "Bhavin Shah");
         email.setFrom("krunaltechforce@gmail.com", "Krunal Parekh");
         email.setSubject(date1 + " Extent Test Report");
         email.setMsg(date1 + " Extent Test Report");
