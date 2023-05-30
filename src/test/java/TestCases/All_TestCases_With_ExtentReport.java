@@ -76,7 +76,7 @@ public class All_TestCases_With_ExtentReport{
 //            opt.addArguments("--no-sandbox");
 //            opt.addArguments("--disable-dev-shm-usage");
             webDriver = new ChromeDriver(opt);
-            webDriver.navigate().to("https://techforceglobal.com/");
+            webDriver.navigate().to("https://staging.techforce.global/");
             webDriver.manage().window().maximize();
             webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
@@ -84,7 +84,7 @@ public class All_TestCases_With_ExtentReport{
         {
 //            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "./Drivers/geckodriver.exe");
             webDriver = new FirefoxDriver();
-            webDriver.navigate().to("https://techforceglobal.com/");
+            webDriver.navigate().to("https://staging.techforce.global/");
             webDriver.manage().window().maximize();
             webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
