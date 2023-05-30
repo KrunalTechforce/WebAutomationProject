@@ -9,9 +9,6 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.google.api.client.util.IOUtils;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.config.OperatingSystem;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
@@ -27,6 +24,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -72,9 +70,6 @@ public class All_TestCases_With_ExtentReport{
 
         if (browser.equals("chrome"))
         {
-//            WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX);
-
-//            System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
             ChromeOptions opt = new ChromeOptions();
             opt.addExtensions(new File("6.4_0.crx"));
 //            opt.addArguments("--headless");
@@ -187,8 +182,8 @@ public class All_TestCases_With_ExtentReport{
         EmailAttachment attachment = new EmailAttachment();
         attachment.setPath("ExtentReport.html");
         attachment.setDisposition(EmailAttachment.ATTACHMENT);
-        attachment.setDescription(date1 + " Test Report");
-        attachment.setName(date1 + " Test Report");
+        attachment.setDescription(date1 + " Techforce WebAutomation HTML Test Report ");
+        attachment.setName(date1 + " Test Report ");
 
         //Create the email message
         System.out.println("====================Start Sending====================");
@@ -201,9 +196,8 @@ public class All_TestCases_With_ExtentReport{
         email.addTo("himanshu.tatariya@techforceglobal.com","Himanshu Tatariya");
         email.addCc("bhavin.shah@techforceglobal.com", "Bhavin Shah");
         email.setFrom("krunaltechforce@gmail.com", "Krunal Parekh");
-        email.setSubject(date1 + " Extent Test Report");
-        email.setMsg(date1 + " Extent Test Report");
-
+        email.setSubject(date1 + " Techforce WebAutomation HTML Test Report ");
+        email.setMsg(date1 + "\n\nNOTE : This is a HTML Test Report So Open In Any Browser For Viewing Report.\n\nThank You");
         //add the attachment
         email.attach(attachment);
 
