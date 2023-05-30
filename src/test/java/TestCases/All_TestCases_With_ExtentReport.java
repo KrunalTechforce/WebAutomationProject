@@ -182,7 +182,7 @@ public class All_TestCases_With_ExtentReport{
         EmailAttachment attachment = new EmailAttachment();
         attachment.setPath("ExtentReport.html");
         attachment.setDisposition(EmailAttachment.ATTACHMENT);
-        attachment.setDescription(date1 + " Techforce WebAutomation HTML Test Report ");
+        attachment.setDescription(date1 + " Techforce WebAutomation HTML Test Report"+".html");
         attachment.setName(date1 + " Test Report ");
 
         //Create the email message
