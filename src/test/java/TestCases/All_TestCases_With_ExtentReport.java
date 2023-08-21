@@ -67,15 +67,14 @@ public class All_TestCases_With_ExtentReport{
         Properties properties = new Properties();
         properties.load(fileInputStream);
         String browser = properties.getProperty("browser");
-
         if (browser.equals("chrome"))
         {
-            ChromeOptions opt = new ChromeOptions();
-            opt.addExtensions(new File("6.4_0.crx"));
+//            ChromeOptions opt = new ChromeOptions();
+//            opt.addExtensions(new File("6.4_0.crx"));
 //            opt.addArguments("--headless");
 //            opt.addArguments("--no-sandbox");
 //            opt.addArguments("--disable-dev-shm-usage");
-            webDriver = new ChromeDriver(opt);
+            webDriver = new ChromeDriver();
             webDriver.navigate().to("https://staging.techforce.global/");
             webDriver.manage().window().maximize();
             webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -186,14 +185,16 @@ public class All_TestCases_With_ExtentReport{
         attachment.setName(date1 + " Test Report ");
 
         //Create the email message
-        System.out.println("====================Start Sending====================");
+        System.out.println("====================Start Sending Mail====================");
         MultiPartEmail email = new MultiPartEmail();
         email.setHostName("smtp.gmail.com");
         email.setSmtpPort(465);
         email.setAuthenticator(new DefaultAuthenticator("krunaltechforce@gmail.com", "nawkikeptovheqxb"));
         email.setSSLOnConnect(true);
         email.addTo("krunal.parekh@techforceglobal.com", "Krunal Parekh");
-        email.addTo("himanshu.tatariya@techforceglobal.com","Himanshu Tatariya");
+        email.addTo("shivani.mehta@techforceglobal.com","Shivani Maheta");
+        email.addTo("vedanshi.bhagat@techforceglobal.com","Vedanshi Bhagat");
+        email.addTo("sanju.sanghadiya@techforceglobal.com","Sanju Sanghadiya");
         email.addCc("bhavin.shah@techforceglobal.com", "Bhavin Shah");
         email.setFrom("krunaltechforce@gmail.com", "Krunal Parekh");
         email.setSubject(date1 + " Techforce WebAutomation HTML Test Report ");

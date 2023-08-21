@@ -26,7 +26,7 @@ public class Build_Your_Team_PO {
     @FindBy(xpath = "//a[contains(text(),'Build your team')]")
     public WebElement BuildYourTeamHeader;
 
-    @FindBy(xpath = "//a[contains(text(),'Hire Dedicated Developers')]")
+    @FindBy(xpath = "//a[contains(@href,'hire-dedicated-developers')]")
     public WebElement HireDedicatedDevButton;
 
     @FindBy(xpath = "//h1[contains(text(),'Hire Dedicated Offshore Developers')]")

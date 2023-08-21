@@ -2,6 +2,7 @@ package WebAppFunctions;
 
 import PageObejcts.*;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +22,7 @@ public class WebAppFunction{
     public void Header_ContactUS()
     {
         ContactUs_PO contactUsPo = new ContactUs_PO(driver);
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(contactUsPo.VerifyHomePage));
         Assert.assertEquals(contactUsPo.VerifyHomePage.getText(),"Custom Software Development Solutions");
         contactUsPo.HandleCookiesPopup.click();
@@ -47,7 +48,7 @@ public class WebAppFunction{
 
     public void Footer_ContactUs() throws InterruptedException {
         ContactUs_PO contactUsPo = new ContactUs_PO(driver);
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(contactUsPo.VerifyHomePage));
         Assert.assertEquals(contactUsPo.VerifyHomePage.getText(),"Custom Software Development Solutions");
         contactUsPo.HandleCookiesPopup.click();
@@ -92,10 +93,12 @@ public class WebAppFunction{
         careerPo.CareerButton.click();
         wait.until(ExpectedConditions.visibilityOf(careerPo.ApplyHereButton));
         String careerUrl = driver.getCurrentUrl();
-        Assert.assertEquals(careerUrl,"https://techforceglobal.com/career/");
+//        Assert.assertEquals(careerUrl,"https://techforceglobal.com/career/");
+        Assert.assertEquals(careerUrl,"https://staging.techforce.global/career/");
         careerPo.ApplyHereButton.click();
         String applynowUrl = driver.getCurrentUrl();
-        Assert.assertEquals(applynowUrl,"https://techforceglobal.com/career/applynow/");
+//        Assert.assertEquals(applynowUrl,"https://techforceglobal.com/career/applynow/");
+        Assert.assertEquals(applynowUrl,"https://staging.techforce.global/career/applynow/");
         careerPo.FirstName.sendKeys("KrunalTest");
         careerPo.LastName.sendKeys("ParekhTest");
         careerPo.Email.sendKeys("krunaltechforce@gmail.com");
@@ -127,7 +130,7 @@ public class WebAppFunction{
     public void HireDedicatedDevelopers()
     {
         Build_Your_Team_PO buildYourTeamPo = new Build_Your_Team_PO(driver);
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(buildYourTeamPo.VerifyHomePage));
         Assert.assertEquals(buildYourTeamPo.VerifyHomePage.getText(),"Custom Software Development Solutions");
         buildYourTeamPo.HandleCookiesPopup.click();
@@ -138,7 +141,8 @@ public class WebAppFunction{
         buildYourTeamPo.HireDedicatedDevButton.click();
         wait.until(ExpectedConditions.visibilityOf(buildYourTeamPo.VerifyHireDedicatedDevPage));
         String hirededicateddev = driver.getCurrentUrl();
-        Assert.assertEquals(hirededicateddev,"https://techforceglobal.com/hire-dedicated-developers/");
+//        Assert.assertEquals(hirededicateddev,"https://techforceglobal.com/hire-dedicated-developers/");
+        Assert.assertEquals(hirededicateddev,"https://staging.techforce.global/hire-dedicated-developers/");
         Assert.assertEquals(buildYourTeamPo.VerifyHireDedicatedDevPage.getText(),"Hire Dedicated Offshore Developers");
 
         buildYourTeamPo.FirstName.sendKeys("KrunalTest");
@@ -166,7 +170,8 @@ public class WebAppFunction{
         buildYourTeamPo.DedicatedSoftwareTeamsButton.click();
         wait.until(ExpectedConditions.visibilityOf(buildYourTeamPo.VerifyDedicatedSoftwarePage));
         String dedicatedsoftwareUrl = driver.getCurrentUrl();
-        Assert.assertEquals(dedicatedsoftwareUrl,"https://techforceglobal.com/custom-software-development-services/");
+//        Assert.assertEquals(dedicatedsoftwareUrl,"https://techforceglobal.com/custom-software-development-services/");
+        Assert.assertEquals(dedicatedsoftwareUrl,"https://staging.techforce.global/custom-software-development-services/");
         Assert.assertEquals(buildYourTeamPo.VerifyDedicatedSoftwarePage.getText(),"Custom Software Development Service");
 
         buildYourTeamPo.FirstName.sendKeys("KrunalTest");
@@ -193,7 +198,8 @@ public class WebAppFunction{
         caseStudiesPo.CaseStudiesButton.click();
         wait.until(ExpectedConditions.visibilityOf(caseStudiesPo.VerifyCaseStudyPage));
         String casestudyUrl = driver.getCurrentUrl();
-        Assert.assertEquals(casestudyUrl,"https://techforceglobal.com/case-studies/");
+//        Assert.assertEquals(casestudyUrl,"https://techforceglobal.com/case-studies/");
+        Assert.assertEquals(casestudyUrl,"https://staging.techforce.global/case-studies/");
         Assert.assertEquals(caseStudiesPo.VerifyCaseStudyPage.getText(),"Case Study");
 
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", caseStudiesPo.Scroll);
@@ -202,7 +208,8 @@ public class WebAppFunction{
         caseStudiesPo.ExploreButton.click();
         wait.until(ExpectedConditions.visibilityOf(caseStudiesPo.VerifyBlockChainPage));
         String blokchainPageUrl = driver.getCurrentUrl();
-        Assert.assertEquals(blokchainPageUrl,"https://techforceglobal.com/case-studies/blockchain-survey-solution/");
+//        Assert.assertEquals(blokchainPageUrl,"https://techforceglobal.com/case-studies/blockchain-survey-solution/");
+        Assert.assertEquals(blokchainPageUrl,"https://staging.techforce.global/case-studies/blockchain-survey-solution/");
         Assert.assertEquals(caseStudiesPo.VerifyBlockChainPage.getText(),"Blockchain Survey Solution");
 
         caseStudiesPo.DownloadPDFButton.click();
